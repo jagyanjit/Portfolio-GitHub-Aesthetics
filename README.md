@@ -1,97 +1,81 @@
-🧩 Portfolio Website — Build Documentation
-📘 Overview
+<h1 align="center">🧩 <b>Portfolio Website — Build Documentation</b></h1>
+<h2>📘 <b>Overview</b></h2>
 
 This document provides a complete, straightforward breakdown of how your personal portfolio website was built — including layout, structure, features, and the technologies used.
-The project is fully hand-coded using HTML, CSS, and JavaScript, with no frameworks or build tools.
 
-⚙️ Core Dependencies
-1. Font Awesome (Icons)
+- Fully hand-coded using **HTML**, **CSS**, and **JavaScript**
+- No external frameworks or build tools used
 
-Used for all interface and social icons.
+<h2>⚙️ <b>Core Dependencies</b></h2> <h3>1️⃣ Font Awesome (Icons)</h3>
+
+- Used for all interface and social icons.
 
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 />
 
-2. Web3Forms (Contact Form Backend)
+<h3>2️⃣ Web3Forms (Contact Form Backend)</h3>
 
-Handles form submissions securely without requiring a custom server.
+- Handles form submissions securely without requiring a custom server.
 
-Endpoint:
+- Endpoint: https://api.web3forms.com/submit
 
-https://api.web3forms.com/submit
+<h2>🧱 <b>Structure & Layout</b></h2>
 
-🧱 Structure & Layout
+The portfolio follows a dual-panel design for a clear separation between navigation and main content.
 
-The portfolio follows a dual-panel design for clear separation between navigation and content.
+<h3>📂 Left Sidebar (`<aside class="sidebar">`)</h3>
 
-Left Sidebar (<aside class="sidebar">)
+  - Fixed position (`width: 380px`, `height: 100vh`)
+  - Independent scroll using `overflow-y: auto`
+  - Contains:
+    - Profile photo and contact info
+    - Social links
+    - Skills section
+    - Education section
+    - Contact form
 
-Fixed position (width: 380px, height: 100vh)
+<h3>🖥️ Right Content Area (`<main class="main-content">`)</h3>
 
-Independent scroll with overflow-y: auto
+  - Starts after the sidebar (`margin-left: 380px`)
+  - Independent scroll using `overflow-y: auto`
+  - Contains:
+    - Projects
+    - Achievements
+    - Certificates
+- Both panels use `.no-scrollbar` to hide scrollbars while keeping scroll functionality
 
-Contains:
+<h2>🧭 <b>Header & Navigation</b></h2>
 
-Profile photo and contact info
+- Two headers are used for the layout:
+  - **Sidebar Header** — shows name/logo and scrolls both panels to top
+  - **Main Header** — contains navigation links and theme toggle
+- Navigation links use `data-target-*` and JavaScript for:
+  - Preventing default URL jumps
+  - Smooth scrolling
+  - Adjusting for fixed header height
 
-Social links
+<h2>👤 <b>Sidebar Components</b></h2> 
 
-Skills
+<h3>🪪 Profile</h3> 
 
-Education
+- **Image:**
 
-Contact form
+![Profile Picture](https://i.ibb.co/prwhWb7M/Picsart-25-08-25-11-28-06-390.jpg) 
 
-Right Content Area (<main class="main-content">)
+<h3>🔗 Social Links</h3>
 
-Starts after the sidebar (margin-left: 380px)
+  - 📞 Phone
+  - 💼 LinkedIn
+  - 🐙 GitHub
+  - ✖️ X (Twitter)
+  - 🧩 LeetCode
 
-Independent scroll with overflow-y: auto
+<h3>🧠 Skills</h3>
 
-Contains:
+Each skill links to its official documentation or platform
 
-Projects
-
-Achievements
-
-Certificates
-
-Both panels use a hidden scrollbar (.no-scrollbar) to keep the interface clean.
-
-🧭 Header & Navigation
-
-Two separate headers are used for the dual-panel layout.
-
-Sidebar Header – Displays your name/logo. Clicking it scrolls both panels to the top smoothly.
-
-Main Header – Contains navigation links and the theme toggle.
-
-Navigation links are enhanced with JavaScript for smooth scrolling using custom data-target-* attributes.
-This prevents default jumps and adjusts for the fixed header height.
-
-👤 Sidebar Components
-Profile
-
-Image:
-Profile Picture
-
-Social Links
-
-📞 Phone
-
-💼 LinkedIn
-
-🐙 GitHub
-
-✖️ X (Twitter)
-
-🧩 LeetCode
-
-Skills
-
-Each skill is a clickable badge linking to its official documentation or platform.
 
 | Skill        | Link                                                                                                                   |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------- |
@@ -113,17 +97,22 @@ Each skill is a clickable badge linking to its official documentation or platfor
 | NumPy        | [https://numpy.org/](https://numpy.org/)                                                                               |
 | TensorFlow   | [https://www.tensorflow.org/](https://www.tensorflow.org/)                                                             |
 
-Education
 
-| Institution                 | Website                                       | Logo                                                                                      |
+
+<h3>🎓 Education</h3>
+
+Lists institutions with websites and logos
+
+| **Institution**             | **Website**                                   | **Logo**                                                                                  |
 | :-------------------------- | :-------------------------------------------- | :---------------------------------------------------------------------------------------- |
 | Silicon University          | [silicon.ac.in](https://silicon.ac.in/)       | ![Logo](https://drive.google.com/thumbnail?id=1WVmcv47k-PG7B37FUfZ6t-ag7IXfhBt2\&sz=w200) |
 | Nayagarh Higher Sec. School | [ngrautocol.ac.in](https://ngrautocol.ac.in/) | ![Logo](https://drive.google.com/thumbnail?id=1dAvwAPbOhWgLqE2okTfpwRxuU4Y1JG-h\&sz=w200) |
 | D.A.V. Public School        | [davpuri.org](http://davpuri.org/)            | ![Logo](https://drive.google.com/thumbnail?id=1JVCYbKEl6Hm-Gw8bA1VOthijJ8oJzY5T\&sz=w200) |
 
-Contact Form
+<h3>📨 Contact Form</h3>
 
-Submits directly to your inbox via Web3Forms.
+- Submits directly to your inbox via Web3Forms.
+- Includes a hidden access key for authentication.
 
 <form action="https://api.web3forms.com/submit" method="POST">
   <input
@@ -133,40 +122,40 @@ Submits directly to your inbox via Web3Forms.
   />
 </form>
 
-🧩 Projects & Achievements
+<h2>🧩 <b>Projects & Achievements</b></h2>
 
-Projects are displayed in responsive grids with modals for detailed views.
+- Projects displayed in responsive grids with modals for details
+- Each card includes:
+  - Project name
+  - Repository / documentation link
+  - Thumbnail or preview
+- Clicking a project opens a modal for extended info
+- Certificates and education logos use a similar grid pattern
 
-| Project              | Repository / Docs                                                                                                                                                                                 | Preview                                                                                       |
-| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------- |
-| Morse Code Converter | [GitHub](https://github.com/jagyanjit/Morse-Code-Converter)                                                                                                                                       | ![Preview](https://vumbnail.com/1122621998.jpg)                                               |
-| Mobile App UI        | [GitHub](https://github.com/jagyanjit/Dummy-Mobile-App)                                                                                                                                           | ![Preview](https://vumbnail.com/1122725179.jpg)                                               |
-| DevOps Project       | [Repo](https://github.com/jagyanjit/DevopsProject1) / [Docs](https://docs.google.com/document/d/1BrmY6poKK3PfhS8PtQmzWv3cpQSjZQxX/edit?usp=sharing&ouid=102413956562003041794&rtpof=true&sd=true) | ![Preview](https://drive.google.com/thumbnail?id=1MkU47ro2UFx3qxlwVIrXY-ot6cNTj_2b\&sz=w1000) |
-| ML Crop Model        | [Notebook](https://github.com/jagyanjit/Machine-Learning-and-Deep-Learning/blob/main/Project_crop.ipynb)                                                                                          | ![Preview](https://drive.google.com/thumbnail?id=1XO2P8jRlKUwItV5bvi2_Qxmk7a4g0GSQ\&sz=w1000) |
-| ML Covid Model       | [Notebook](https://github.com/jagyanjit/Machine-Learning-and-Deep-Learning/blob/main/Project_covid.ipynb)                                                                                         | ![Preview](https://drive.google.com/thumbnail?id=1XO2P8jRlKUwItV5bvi2_Qxmk7a4g0GSQ\&sz=w1000) |
+| **Project**          | **Repository / Docs**                                                                                                                               | **Preview**                                                                                   |
+| :------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| Morse Code Converter | [GitHub](https://github.com/jagyanjit/Morse-Code-Converter)                                                                                         | ![Preview](https://vumbnail.com/1122621998.jpg)                                               |
+| Mobile App UI        | [GitHub](https://github.com/jagyanjit/Dummy-Mobile-App)                                                                                             | ![Preview](https://vumbnail.com/1122725179.jpg)                                               |
+| DevOps Project       | [Repo](https://github.com/jagyanjit/DevopsProject1) / [Docs](https://docs.google.com/document/d/1BrmY6poKK3PfhS8PtQmzWv3cpQSjZQxX/edit?usp=sharing) | ![Preview](https://drive.google.com/thumbnail?id=1MkU47ro2UFx3qxlwVIrXY-ot6cNTj_2b\&sz=w1000) |
+| ML Crop Model        | [Notebook](https://github.com/jagyanjit/Machine-Learning-and-Deep-Learning/blob/main/Project_crop.ipynb)                                            | ![Preview](https://drive.google.com/thumbnail?id=1XO2P8jRlKUwItV5bvi2_Qxmk7a4g0GSQ\&sz=w1000) |
+| ML Covid Model       | [Notebook](https://github.com/jagyanjit/Machine-Learning-and-Deep-Learning/blob/main/Project_covid.ipynb)                                           | ![Preview](https://drive.google.com/thumbnail?id=1XO2P8jRlKUwItV5bvi2_Qxmk7a4g0GSQ\&sz=w1000) |
 
 
-Modals display extra information dynamically when users click on cards.
-Certificate previews and education logos are displayed in a similar grid layout.
+Tip: Clicking a card opens its modal with more info.
+Certificates and education logos follow a similar responsive grid layout.
 
-🌗 Theme Toggle
+<h2>🌗 <b>Theme Toggle</b></h2>
 
-A simple light/dark mode switch built with:
+A simple light/dark mode switch implemented using:
 
-HTML: Checkbox toggle inside a label
+- **HTML:** Checkbox toggle inside a label
+- **CSS:** Moves slider and switches icons
+- **JavaScript:** Stores theme preference in `localStorage`
 
-CSS: Moves slider and switches icons
+<h2>✅ <b>Summary</b></h2>
 
-JS: Saves theme preference in localStorage
-
-✅ Summary
-
-Fully custom-built using HTML, CSS, and JavaScript
-
-Dual-panel responsive layout
-
-Smooth navigation and accessible UI
-
-Integrated contact form using Web3Forms
-
-Dynamic modals and theme toggle for better UX
+- Fully custom-built using **HTML**, **CSS**, and **JavaScript**
+- Dual-panel responsive layout
+- Smooth navigation and accessible UI
+- Integrated contact form via **Web3Forms**
+- Dynamic modals and theme toggle for better UX
